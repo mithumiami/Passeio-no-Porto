@@ -102,6 +102,7 @@
 ###ER図
 
 ###テーブル定義書
+https://docs.google.com/spreadsheets/d/1QdboKez4aRx9LvrMvtp5lXUy2ub0J4pzS-vied-wk70/edit#gid=375051428
 
 ###アプリケーション詳細設計書
 
