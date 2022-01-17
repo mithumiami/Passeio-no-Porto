@@ -1,3 +1,18 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  devise_for :admins, skip: [:registrations, :passwords], controllers: {
+    sessions: 'admins/sessions'
+  }
+
+  namespace :admin do
+    get 'top' => 'homes#top', as: 'top'
+  end
+
+  devise_for :users, skip: [:passwords], controllers: {
+    sessions: 'devise/sessions',
+    registrations: 'devise/registrations'
+  }
+
+  scope module: :public do
+    root to: 'homes#top'
+  end
 end
