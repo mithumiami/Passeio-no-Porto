@@ -1,0 +1,11 @@
+<h1>一覧</h1>
+
+<div><%= link_to "+", new_post_path %></div>
+
+<% @posts.each do |post| %>
+  <p>タイトル</p>
+
+  <div><%= post.title %></div>
+  <div><%= post.body %><div>
+
+<% end %>

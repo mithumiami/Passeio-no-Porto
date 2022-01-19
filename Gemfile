@@ -67,3 +67,9 @@ gem 'rubocop', require: false
 gem 'rubocop-rails', require: false
 
 gem 'pry-rails'
+
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"
+
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
