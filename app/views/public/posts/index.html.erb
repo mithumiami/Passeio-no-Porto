@@ -1,11 +1,31 @@
-<h1>一覧</h1>
+<p id="notice"></p>
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
 
-<div><%= link_to "+", new_post_path %></div>
 
-<% @posts.each do |post| %>
-  <p>タイトル</p>
+      <h4 class="my-3 ml-3">一覧</h4>
 
-  <div><%= post.title %></div>
-  <div><%= post.body %><div>
+        <div><%= link_to "+", new_post_path, class: 'btn btn-default ' %></div>
 
-<% end %>
+        <% @posts.each do |post| %>
+        <div class="col-md-3">
+          <div class="product-item">
+            <section class="product-text">
+
+              <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
+
+              <div><%= post.title %></div>
+
+            </section>
+
+          </div>
+        </div>
+
+
+
+        <% end %>
+
+
+    </div>
+  </div>
