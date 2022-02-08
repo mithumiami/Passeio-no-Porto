@@ -1,0 +1,45 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+
+      <h4 class>Users Infomation</h4>
+
+
+      <table cellpadding="6">
+
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>email</th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        <% @users.each do |user| %>
+            <tr>
+                <div class="user-item">
+                  <section class="user-text">
+
+
+                    <td><%= user.id %></td>
+                    <td><%= user.last_name %><%= user.first_name %></td>
+                    <td><%= user.email %></td>
+                    <td><%#=  %></td>
+
+                  </section>
+
+                </div>
+              <% end %>
+            </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+
+

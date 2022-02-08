@@ -1,0 +1,21 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+
+      <h4 class>Edit post</h4>
+
+      <div class= "text-left">
+              <%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
+     </div>
+
+
+        <%= form_with model:@post, local:true do |f| %>
+          <label for="Title">Title</label>
+          <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Title"%></div>
+
+          <label for="Body">Caption</label>
+          <div class><%= f.text_area :body, autofocus: true, id:"Body", placeholder:"Caption"%></div>
+
+          <%= f.submit "Update", class: 'btn btn-outline-success' %>
+        <% end %>

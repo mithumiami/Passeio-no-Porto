@@ -5,6 +5,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     get 'top' => 'homes#top', as: 'top'
+    resources :genres, only: [:create, :new, :index, :destroy]
+    resources :users, only: [:index, :edit, :show, :destroy]
   end
 
   devise_for :users, skip: [:passwords], controllers: {
@@ -15,7 +17,7 @@ Rails.application.routes.draw do
   scope module: :public do
     root to: 'homes#top'
     get 'about' => 'homes#about', as: 'about'
-    resources :posts, only: [:create, :new, :edit, :update, :index, :show]
+    resources :posts, only: [:create, :new, :edit, :update, :index, :show, :destroy]
     resources :users, only: [:edit, :update, :show]
     get '/users/:id/check' => 'users#check', as: 'check'         #退会確認画面
     patch '/users/:id/goodbye' => 'users#goodbye', as:'goodbye'    #退会処理（ステータスの更新）

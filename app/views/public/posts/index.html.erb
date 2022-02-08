@@ -2,19 +2,23 @@
 <p id="notice"></p>
 <div class="container">
   <div class="row">
+    <div class="col-sm-12 mx-auto">
 
 
-      <h4 class="my-3 ml-3">一覧</h4>
+      <h4 class="my-3 ml-3">Posts</h4>
 
-        <div><%= link_to "+", new_post_path, class: 'btn btn-default ' %></div>
+         <div class= "my-3 ml-3 text-center">
+          <div class><%= link_to "New Post", new_post_path, class: 'btn btn-outline-dark ' %></div>
+        </div>
+    </div>
 
         <% @posts.each do |post| %>
         <div class="col-md-3">
           <div class="product-item">
             <section class="product-text">
-
-              <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
-
+              <%= link_to post_path(post.id) do %>
+                <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
+              <% end %>
               <div><%= post.title %></div>
 
             </section>
@@ -27,5 +31,6 @@
         <% end %>
 
 
-    </div>
+      </div>
+
   </div>

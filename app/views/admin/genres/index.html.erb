@@ -1,0 +1,34 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+
+      <h4 class>Genre</h4>
+
+      <h5>New Genre</h5>
+
+      <%= form_with model: @genre, local:true do |f| %>
+        <%= f.text_field :title %>
+        <%= f.submit 'Create', class: 'btn btn-success' %>
+      <% end %>
+
+      <table>
+        <% @genres.each do |genre| %>
+            <tr>
+                <div class="genre-item">
+                  <section class="genre-text">
+
+                    <td><h3 class="genre-heading"><%= genre.id %><%= genre.title %></h3></td>
+                    <td><%= link_to "削除", class: 'btn btn-danger' %></td>
+
+                  </section>
+
+                </div>
+              <% end %>
+            </tr>
+      </table>
+
+
+
+
+

@@ -21,10 +21,10 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <% if admin_signed_in? %>
-              <li class="nav-item">ユーザー管理</li>
-              <li class="nav-item">エリア管理</li>
-              <li class="nav-item">ジャンル管理</li>
-              <li class="nav-item"><%= link_to 'ログアウト', destroy_admin_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+              <li class="nav-item mx-1">ユーザー管理</li>
+              <li class="nav-item mx-1">エリア管理</li>
+              <li class="nav-item mx-1"><%= link_to 'Genre', admin_genres_path, class: 'btn btn-secondary' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Log out', destroy_admin_session_path, method: :delete, class: 'btn btn-secondary' %></li>
 
             <%#= form_tag(admin_search_path, method: :get) do %>
               <%#= text_field_tag "search[content]", "", :placeholder =>"会員: 姓,名,セイ,メイ / 商品: 商品名" %>
@@ -37,16 +37,17 @@
 
             <% elsif user_signed_in? %>
               <p>Bon dia,<%= current_user.account %>!</p>
-              <li class="nav-item"><%= link_to 'マイページ', user_path(current_user.id), class: 'nav-link text-dark' %></li>
-              <li class="nav-item">Area</li>
-              <li class="nav-item">Genre</li>
-              <li class="nav-item"><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: 'nav-link text-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'My Page', user_path(current_user.id), class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Posts', posts_path, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1">エリア</li>
+              <li class="nav-item mx-1">ジャンル</li>
+              <li class="nav-item mx-1"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %></li>
 
             <% else %>
-              <li class="nav-item"><%= link_to 'About', about_path, class: 'nav-link text-dark' %></li>
-              <li class="nav-item">エリア</li>
-              <li class="nav-item"><%= link_to '新規登録', new_user_registration_path, class: 'nav-link text-dark' %></li>
-              <li class="nav-item"><%= link_to 'ログイン', new_user_session_path, class: 'nav-link text-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'About', about_path, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1">エリア</li>
+              <li class="nav-item mx-1"><%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark' %></li>
             <% end %>
             </ul>
           </div>
