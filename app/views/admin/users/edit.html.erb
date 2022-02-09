@@ -1,0 +1,54 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 ">
+
+     <div class="p-3 mb-2 bg-muted text-dark"></div>
+
+      <%= form_with model: @user, url: admin_user_path(@user.id),local: true do |f| %>
+
+        <h4>Edit <%= @user.last_name %><%= @user.first_name %>'s information</h4>
+
+
+    <table cellpadding="6">
+
+        <tr>
+          <td>User ID</td>
+          <td><div><%= @user.id %></div></td>
+        </tr>
+
+        <tr>
+          <td>Name</td>
+          <td><%= f.text_field :last_name %><%= f.text_field :first_name %></td>
+        </tr>
+
+        <tr>
+          <td>Account Name</td>
+          <td><div><%= f.text_field :account %></div></td>
+        </tr>
+
+        <tr>
+          <td><h4>Telephone number</h4></td>
+          <td><%= f.text_field :telephone_number %></td>
+        </tr>
+
+        <tr>
+          <td>Email</td>
+          <td><%= f.text_field :email %></td>
+        </tr>
+
+        <tr>
+          <td>Status</td>
+          <td><%= f.label :is_active, 'Valid' %>
+              <%= f.radio_button :is_active, true %>
+              <%= f.label :is_active, 'Withdrawal' %>
+              <%= f.radio_button :is_active, false %></td>
+        </tr>
+    </table>
+
+
+          <%= f.submit 'Update', class: 'btn btn-outline-success' %>
+        <% end %>
+      </div>
+    </div>
+  </div>
