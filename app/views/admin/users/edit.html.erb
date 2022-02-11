@@ -19,22 +19,23 @@
 
         <tr>
           <td>Name</td>
-          <td><%= f.text_field :last_name %><%= f.text_field :first_name %></td>
+          <td><%= f.text_field :last_name, class: 'border border-secondary rounded' %>
+          <%= f.text_field :first_name, class: 'border border-secondary rounded' %></td>
         </tr>
 
         <tr>
           <td>Account Name</td>
-          <td><div><%= f.text_field :account %></div></td>
+          <td><div><%= f.text_field :account, class: 'border border-secondary rounded' %></div></td>
         </tr>
 
         <tr>
           <td><h4>Telephone number</h4></td>
-          <td><%= f.text_field :telephone_number %></td>
+          <td><%= f.text_field :telephone_number, class: 'border border-secondary rounded' %></td>
         </tr>
 
         <tr>
           <td>Email</td>
-          <td><%= f.text_field :email %></td>
+          <td><%= f.text_field :email, class: 'border border-secondary rounded' %></td>
         </tr>
 
         <tr>

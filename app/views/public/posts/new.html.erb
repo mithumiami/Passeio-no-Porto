@@ -8,17 +8,19 @@
 
         <div class= "offset-4 my-3">
           <h6>Title</h6>
-          <%= f.text_field :title %>
+          <%= f.text_field :title, class: "border boder-secondary rounded" %>
 
           <h6>Genre</h6>
+          <%= f.collection_select(:title, Genre.all, :id, :title) %>
 
           <h6>Area</h6>
+          <%= f.collection_select(:title, Area.all, :id, :title) %>
 
           <h6>Caption</h6>
-          <%= f.text_area :body %>
+          <%= f.text_area :body, class: "border boder-secondary rounded" %>
 
           <h6>Image</h6>
-          <%= f.attachment_field :image %>
+          <%= f.attachment_field :image, class: "border boder-secondary rounded" %>
 
 
 

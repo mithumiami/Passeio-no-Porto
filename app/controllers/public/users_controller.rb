@@ -12,7 +12,7 @@ class Public::UsersController < ApplicationController
     @user.update(user_params)
     redirect_to user_path(current_user.id)
   end
-  
+
   def check
     @user = User.find(current_user.id)
   end

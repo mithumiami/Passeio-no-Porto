@@ -21,8 +21,9 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav ml-auto">
             <% if admin_signed_in? %>
+              <li class="nav-item mx-1"><%= link_to 'Posts', admin_posts_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Users', admin_users_path, class: 'btn btn-outline-dark' %></li>
-              <li class="nav-item mx-1">エリア管理</li>
+              <li class="nav-item mx-1"><%= link_to 'Areas', admin_areas_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Genres', admin_genres_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log out', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %></li>
 
@@ -36,16 +37,16 @@
 
 
             <% elsif user_signed_in? %>
-              <p>Bon dia,<%= current_user.account %>!</p>
+              <div class>Bon dia,<%= current_user.account %>!</div>
               <li class="nav-item mx-1"><%= link_to 'My Page', user_path(current_user.id), class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Posts', posts_path, class: 'btn btn-outline-dark' %></li>
-              <li class="nav-item mx-1">エリア</li>
-              <li class="nav-item mx-1">ジャンル</li>
+              <li class="nav-item mx-1"><%= link_to 'Area', areas_path, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Genre', genres_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %></li>
 
             <% else %>
               <li class="nav-item mx-1"><%= link_to 'About', about_path, class: 'btn btn-outline-dark' %></li>
-              <li class="nav-item mx-1">エリア</li>
+              <li class="nav-item mx-1"><%= link_to 'Area', areas_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark' %></li>
             <% end %>

@@ -5,28 +5,29 @@
 
         <%= form_with model: @user, url: user_path(current_user.id),local: true do |f| %>
 
-        <h4 class="text-center my-4"><%= @user.account %>さんの会員情報編集</h4>
+        <h4 class="text-center my-4">Edit <%= @user.account %>'s information</h4>
 
         <table class ="my-5 mx-5">
 
         <tr>
-          <td>氏名</td>
-          <td><%= f.text_field :last_name %><%= f.text_field :first_name %></td>
+          <td>Name</td>
+          <td><%= f.text_field :last_name, class: 'border border-secondary rounded' %>
+          <%= f.text_field :first_name, class: 'border border-secondary rounded' %></td>
         </tr>
 
         <tr>
-          <td>アカウント名</td>
-          <td><%= f.text_field :account %></td>
+          <td>Account name</td>
+          <td><%= f.text_field :account, class: 'border border-secondary rounded' %></td>
         </tr>
 
         <tr>
-          <td>メールアドレス</td>
-          <td><%= f.text_field :email %></td>
+          <td>Email</td>
+          <td><%= f.text_field :email, class: 'border border-secondary rounded' %></td>
         </tr>
 
         <tr>
-          <td>電話番号</td>
-          <td><%= f.text_field :telephone_number %></td>
+          <td>Telephone number</td>
+          <td><%= f.text_field :telephone_number, class: 'border border-secondary rounded' %></td>
         </tr>
 
 
@@ -35,7 +36,8 @@
 
 
 
-          <div><%= f.submit '変更内容を保存', class: 'btn btn-success' %><%#=link_to "退会する", check_path(current_customer.id), class: 'btn btn-danger' %></div>
+          <div><%= f.submit 'Update', class: 'btn btn-success' %>
+          <%=link_to "Withdrawal", check_path(current_user.id), class: 'btn btn-danger' %></div>
         <% end %>
       </div>
     </div>

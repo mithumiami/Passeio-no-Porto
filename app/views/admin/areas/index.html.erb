@@ -1,0 +1,43 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+
+      <h4 class>Area</h4>
+
+      <h5>New Area</h5>
+
+      <%= form_with model: @area, local:true do |f| %>
+      <h6 for="Title">Area name</h6>
+        <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Area name", class: "border boder-secondary rounded" %></div>
+
+        <h6>Image</h6>
+          <%#= f.attachment_field :image %>
+
+        <%= f.submit 'Create', class: 'btn btn-success' %>
+      <% end %>
+
+      <table class = "table">
+        <% @areas.each do |area| %>
+            <tr>
+                <div class="area-item">
+                  <section class="area-text">
+
+                    <td><%= area.id %></td>
+                    <td><%= area.title %></td>
+
+                    <td><%#= attachment_image_tag list, :image, :fill, 400, 300, format: 'jpeg' %><td>
+
+                    <td><%#= link_to "削除", admin_area_path(@area), method: :delete %></td>
+
+                  </section>
+
+                </div>
+              <% end %>
+            </tr>
+      </table>
+
+
+
+
+
