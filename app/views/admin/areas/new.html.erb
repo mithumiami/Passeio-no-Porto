@@ -1,0 +1,10 @@
+<%= form_with model: @area, url:'/admin/areas', local:true do |f| %>
+
+      <h6 for="Title">Area name</h6>
+        <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Area name", class: "border boder-secondary rounded" %></div>
+
+        <h6>Image</h6>
+          <%= f.attachment_field :image %>
+
+        <%= f.submit 'Create', class: 'btn btn-success' %>
+      <% end %>

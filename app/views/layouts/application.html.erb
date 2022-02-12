@@ -25,7 +25,9 @@
               <li class="nav-item mx-1"><%= link_to 'Users', admin_users_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Areas', admin_areas_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Genres', admin_genres_path, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Contact', admin_contacts_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log out', destroy_admin_session_path, method: :delete, class: 'btn btn-outline-dark' %></li>
+
 
             <%#= form_tag(admin_search_path, method: :get) do %>
               <%#= text_field_tag "search[content]", "", :placeholder =>"会員: 姓,名,セイ,メイ / 商品: 商品名" %>
@@ -43,12 +45,14 @@
               <li class="nav-item mx-1"><%= link_to 'Area', areas_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Genre', genres_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Contact', new_contact_path, class: 'btn btn-outline-dark' %></li>
 
             <% else %>
               <li class="nav-item mx-1"><%= link_to 'About', about_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Area', areas_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark' %></li>
+              <li class="nav-item mx-1"><%= link_to 'Contact', new_contact_path, class: 'btn btn-outline-dark' %></li>
             <% end %>
             </ul>
           </div>

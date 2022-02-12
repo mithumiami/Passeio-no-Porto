@@ -1,7 +1,6 @@
 class Admin::AreasController < ApplicationController
   def index
    @areas = Area.all
-   #@area = Area.find(params[:id])
   end
 
   def new

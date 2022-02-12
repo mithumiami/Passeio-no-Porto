@@ -1,0 +1,22 @@
+<h4>Contact with Us</h4>
+
+
+      <%= form_with model: @contact, local:true do |f| %>
+
+        <label>Name</label>
+        <div><%= f.text_field :name %></div>
+
+        <label>Telephone number</label>
+        <div><%= f.text_field :telephone_number %></div>
+
+        <label>Email</label>
+        <div><%= f.text_field :email %></div>
+
+        <label>Title</label>
+        <div><%= f.text_field :title %></div>
+
+        <label>Caption</label>
+        <div><%= f.text_field :body %></div>
+
+        <%= f.submit 'Create', class: 'btn btn-success' %>
+      <% end %>
