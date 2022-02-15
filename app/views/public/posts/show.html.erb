@@ -9,11 +9,26 @@
               <%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
         </div>
 
-         <h5><%#= post.user.account %></h5>
+         <h5><%#= @post.user.account %></h5>
          <div class><%#= post.genre.title %></div>
          <div class><%#= post.area.title %></div>
          <p><%= @post.body %></p>
          <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+
+
+          <% if @post.favorited_by?(current_user) %>
+              <p>
+                <%= link_to post_likes_path(@post), method: :delete do %>
+                  ♥<%= @post.likes.count %> likes
+                <% end %>
+              </p>
+              <% else %>
+              <p>
+                <%= link_to post_likes_path(@post), method: :post do %>
+                  ♡<%= @post.likes.count %> likes
+                <% end %>
+              </p>
+            <% end %>
 
          <%# if @post.user == current_user %>
             <%= link_to "Destroy", post_path(@post), method: :delete, class: 'btn btn-outline-danger' %>

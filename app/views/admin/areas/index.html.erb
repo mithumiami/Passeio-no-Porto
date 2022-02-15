@@ -18,9 +18,11 @@
                   <section class="area-text">
 
                     <td><%= area.id %></td>
+
+                    <td><%= attachment_image_tag area, :image, :fill, 40, 30, format: 'jpeg' %><td>
+
                     <td><%= area.title %></td>
 
-                    <td><%= attachment_image_tag area, :image, :fill, 400, 300, format: 'jpeg' %><td>
 
                     <td><%= link_to "削除", admin_area_path(area.id), method: :delete %></td>
 

@@ -1,1 +1,17 @@
 <h1>Thanks!</h1>
+ <table>
+        <% @contacts.each do |contact| %>
+            <tr>
+                <div class="contact-item">
+                  <section class="contact-text">
+<%# binding.pry %>
+                    <td><h3 class="contact-heading"><%= contact.title %></h3></td>
+                    <td><%= link_to "Detail", admin_contact_path(contact.id) %></td>
+
+
+                  </section>
+
+                </div>
+              <% end %>
+            </tr>
+      </table>

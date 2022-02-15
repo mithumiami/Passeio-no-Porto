@@ -1,10 +1,10 @@
 class Admin::ContactsController < ApplicationController
   def index
-    @contcts = Contact.all
-    #@contact = Contact.find(params[:id])
+    @contacts = Contact.all
   end
 
  def show
+   @contact = Contact.find(params[:id])
  end
 
   private

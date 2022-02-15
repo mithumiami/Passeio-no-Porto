@@ -9,7 +9,7 @@ class Admin::AreasController < ApplicationController
 
   def create
     area = Area.new(area_params)
-    area.save!
+    area.save
     redirect_to admin_areas_path
   end
 
@@ -21,7 +21,7 @@ class Admin::AreasController < ApplicationController
 
   private
   def area_params
-    params.permit(:title, :image)
+    params.require(:area).permit(:title, :image)
   end
 
 end

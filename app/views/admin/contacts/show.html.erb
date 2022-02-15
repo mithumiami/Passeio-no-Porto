@@ -1,0 +1,47 @@
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+      <h4>Detail</h4>
+
+      <table class = "table">
+        <tr>
+          <th>
+            <td>Name</td>
+            <td><%= @contact.name %></td>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <td>Telephone number</td>
+            <td><%= @contact.telephone_number %></td>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <td>Email</td>
+            <td><%= @contact.email %></td>
+          </th>
+        </tr>
+
+        <tr>
+          <th>
+            <td>Title</td>
+            <td><%= @contact.title %></td>
+
+        <tr>
+          <th>
+            <td>Caption</td>
+            <td><%= @contact.body %></td>
+          </th>
+        </tr>
+        </tbody>
+
+        <%= link_to "Back", admin_contacts_path, class: 'btn btn-primary' %>
+
+      </table>
+    </div>
+  </div>
+</div>
