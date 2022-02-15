@@ -38,14 +38,14 @@ class Public::PostsController < ApplicationController
   end
   
   def search
-    @posts = Post.search(params[:keyword])
-    @keyword = params[:keyword]
-    render "index"
+  @posts = Post.search(params[:keyword])
+  @keyword = params[:keyword]
+  render "index"
   end
 
   private
   def post_params
-    params.require(:post).permit(:title, :body, :image, :user_id)
+    params.require(:post).permit(:title, :body, :image, :user_id, :area_id, :genre_id)
   end
 
 end

@@ -5,6 +5,8 @@ class Public::AreasController < ApplicationController
   end
 
   def show
+   @area = Area.find(params[:id])
+   @posts = @area.posts
   end
 
  private

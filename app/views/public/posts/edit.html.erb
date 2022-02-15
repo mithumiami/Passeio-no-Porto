@@ -14,6 +14,12 @@
           <label for="Title">Title</label>
           <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Title"%></div>
 
+          <h6>Genre</h6>
+          <%= f.collection_select(:title, Genre.all, :id, :title) %>
+
+          <h6>Area</h6>
+          <%= f.collection_select(:title, Area.all, :id, :title) %>
+
           <label for="Body">Caption</label>
           <div class><%= f.text_area :body, autofocus: true, id:"Body", placeholder:"Caption"%></div>
 
