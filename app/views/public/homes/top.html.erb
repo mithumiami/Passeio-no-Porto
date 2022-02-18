@@ -1,20 +1,46 @@
-
-
+<p id="notice"></p>
 <p id="notice"></p>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+    <div class="col-sm-12 mx-auto">
+
+      <h3>Bem Vindo ao Porto!!</h3>
+
+      <div class="search-form">
+        <%= form_with url: search_path, method: :get, local: true do |f| %>
+          <%= f.text_field :keyword, value: @keyword %>
+          <%= f.submit "検索" %>
+        <% end %>
+      </div>
+      
 
 
-        <h3 class="text-center">Bem-vindo ao Porto!</h3>
+
+      <h4 class="my-3 ml-3">Posts</h4>
+
+
+    </div>
+
+        <% @posts.each do |post| %>
+        <div class="col-md-3">
+          <div class="product-item">
+            <section class="product-text">
+
+                <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
+
+              <div><%= post.user.account %></div>
+              <div><%= post.title %></div>
+
+            </section>
+
+          </div>
+        </div>
 
 
 
+        <% end %>
 
 
       </div>
 
-
-
-    </div>
   </div>

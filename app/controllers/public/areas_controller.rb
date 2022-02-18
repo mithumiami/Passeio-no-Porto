@@ -11,7 +11,7 @@ class Public::AreasController < ApplicationController
 
  private
   def area_params
-    params.require(:area).permit(:title, :image)
+    params.require(:area).permit(:title, :image, :post_id)
   end
 
 end

@@ -8,7 +8,7 @@
     <div class="col-sm-12 mx-auto">
 
 
-      <h4 class="my-3 ml-3">Areas</h4>
+      <h4 class="my-3 ml-3"><%= @area.title %></h4>
 
 
 
@@ -18,13 +18,13 @@
             <div class="product-item">
               <section class="product-text">
                 <tr>
-                  <td><%= @post.title %></td>
+                  <td><%= post.title %></td>
 
                   <td>
                   <div>
-                    <%#= link_to area_path(area.id) do %>
-                    <%#= attachment_image_tag area, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
-                    <%# end %>
+                    <%= link_to post_path(post.id) do %>
+                    <%= attachment_image_tag post, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
+                    <% end %>
                   </div>
                   </td>
                 </tr>

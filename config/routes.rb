@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :areas, only: [:index, :show]
     resources :posts, only: [:create, :new, :edit, :update, :index, :show, :destroy]do
     resource :likes, only: [:create, :destroy]end
-    resources :users, only: [:edit, :update, :show]
+    resources :users, only: [:edit, :update, :show, :index]
     get '/users/:id/check' => 'users#check', as: 'check'         #退会確認画面
     patch '/users/:id/goodbye' => 'users#goodbye', as:'goodbye'    #退会処理（ステータスの更新）
     resources :contacts, only: [:new, :create, :index]

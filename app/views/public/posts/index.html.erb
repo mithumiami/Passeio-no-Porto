@@ -12,6 +12,23 @@
       </div>
 
 
+      <div><%#= @tag_list.each do |list| %>
+        <div>
+             <%#= list.name %>
+             <%#="(#{list.posts.count})" %><%# end %>
+
+        </div>
+      </div>
+
+      <div>
+        <h4 class="my-3 ml-3">Recommend</h4>
+        <%# @post_like_ranks.with_index(1)each do |post, i| %>
+        <h6>No.<%#= i %></h6>
+        <%#= post.title %>
+        <%# end %>
+      </div>
+
+
 
       <h4 class="my-3 ml-3">Posts</h4>
 
@@ -27,8 +44,9 @@
               <%= link_to post_path(post.id) do %>
                 <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
               <% end %>
-              <div><%#= post.user.account %></div>
+              <div><%= post.user.account %></div>
               <div><%= post.title %></div>
+              <div id="like"><%= render "public/likes/like", post: post %></div>
 
             </section>
 

@@ -1,1 +1,28 @@
 <h1>GENRE INDEX</h1>
+
+<p id="notice"></p>
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
+
+
+      <h4 class="my-3 ml-3">Genres</h4>
+
+
+
+        <table>
+          <% @genres.each do |genre| %>
+
+            <div class="product-item">
+              <section class="product-text">
+                <tr>
+                  <td><%= link_to genre_path(genre.id) do %><%= genre.title %><% end %></td>
+                </tr>
+              </section>
+           </div>
+           <% end %>
+       </table>
+     </div>
+   </div>
+</div>
