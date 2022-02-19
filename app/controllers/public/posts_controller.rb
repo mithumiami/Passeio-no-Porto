@@ -4,7 +4,7 @@ class Public::PostsController < ApplicationController
     @posts = Post.all
     @tag_list = Tag.all              #ビューでタグ一覧を表示するために全取得。
     @post = current_user.posts.new   #ビューのform_withのmodelに使う。
-    @post_like_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    #@post_like_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
 
   end
 

@@ -9,24 +9,32 @@
               <%= attachment_image_tag @post, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
         </div>
 
-         <h5><%= @post.user.account %></h5>
-         <div class><%= @post.genre.title %></div>
-         <div class><%= @post.area.title %></div>
-         <p><%= @post.body %></p>
-         <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
-         <div class><%#= @post_tags.each do |tag| %>
-                    <%#= link_to  tag_posts_path(tag_id: tag.id) do %>
-                    <%#= tag.name %>
-                    <%# end %>
-                    <%# end %>
-          </div>
+          <div class>
+           <li><h5 class><%= link_to prof_path(@post.user.id) do %>
+               <%= @post.user.account %>
+               <% end %>
+           </h5>
 
-         <div id="like"><%= render "public/likes/like", post: @post %></div>
+           <div class><%= @post.genre.title %></div>
+           <div class><%= @post.area.title %></div>
+           <p><%= @post.body %></p>
+           <p><%= @post.created_at.strftime('%Y/%m/%d') %></p>
+           <div class><%#= @post_tags.each do |tag| %>
+                      <%#= link_to  tag_posts_path(tag_id: tag.id) do %>
+                      <%#= tag.name %>
+                      <%# end %>
+                      <%# end %>
+            </div>
+
+           <div id="like"><%= render "public/likes/like", post: @post %></div>
+          </div>
 
 
          <% if @post.user == current_user %>
             <%= link_to "Back", posts_path, class: 'btn btn-outline-primary' %>
-            <%= link_to "Destroy", post_path(@post), method: :delete, class: 'btn btn-outline-danger' %>
+            <%= link_to "Destroy", post_path(@post), method: :delete,
+            data: {confirm: "Are you sure want to delete?　Once deleted, it cannot be restored"},
+            class: 'btn btn-outline-danger' %>
             <%= link_to "Edit", edit_post_path(@post.id), class: 'btn btn-outline-success' %>
          <% end %>
 

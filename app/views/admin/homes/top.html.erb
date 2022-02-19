@@ -1,8 +1,27 @@
 <p id="notice"></p>
 <div class="container">
   <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+    <div class="col-sm-12 mx-auto ">
 
-      <h4 class>Admin Top Page</h4>
+      <h4 class= "text-center my-4">Admin Top Page</h4>
 
-      <p class>トップページに何を載せるかは全く考えていませんのでけすかも</p>
+      <p class= "text-center my-4">Select the item you want to manage from the header.</p>
+
+      <h5 class= "text-center my-4">Current Post INDEX</h5>
+
+        <% @posts.each do |post| %>
+        <div class="col-md-3">
+          <div class="product-item">
+            <section class>
+
+                <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
+              <div><%= post.title %></div>
+              <div><%= post.user.account %></div>
+
+            </section>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

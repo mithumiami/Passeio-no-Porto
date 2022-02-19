@@ -1,10 +1,23 @@
-<%= form_with model: @area, url:'/admin/areas', local:true do |f| %>
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
+      <h4 class= "text-center my-4"=>Create New Area</h4>
 
-      <h6 for="Title">Area name</h6>
-        <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Area name", class: "border boder-secondary rounded" %></div>
 
-        <h6>Image</h6>
-          <%= f.attachment_field :image %>
+      <div class= "col-md-4">
+        <%= form_with model: @area, url:'/admin/areas', local:true do |f| %>
 
-        <%= f.submit 'Create', class: 'btn btn-success' %>
-      <% end %>
+        <h6 for="Title">Area name</h6>
+          <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Area name", class: "border boder-secondary rounded" %></div>
+
+          <h6 class= "my-4">Image</h6>
+          <div class= "my-4"><%= f.attachment_field :image %></div>
+
+          <div class= "my-4"><%= f.submit 'Create', class: 'btn btn-outline-success' %></div>
+        <% end %>
+      </div>
+
+    </div>
+  </div>
+</div>

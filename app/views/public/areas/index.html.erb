@@ -1,5 +1,3 @@
-<h1>AREA INDEX</h1>
-
 <p id="notice"></p>
 <p id="notice"></p>
 <div class="container">
@@ -8,29 +6,19 @@
 
 
       <h4 class="my-3 ml-3">Areas</h4>
-
-
-
-        <table>
           <% @areas.each do |area| %>
-
-            <div class="product-item">
+            <div class= "col-md-0">
+            <div class= "product-item">
               <section class="product-text">
-                <tr>
-                  <td><%= area.title %></td>
-
-                  <td>
-                  <div>
-                    <%= link_to area_path(area.id) do %>
-                    <%= attachment_image_tag area, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
-                    <% end %>
-                  </div>
-                  </td>
-                </tr>
+                    <h6 class><%= area.title %></h6>
+                    <div>
+                      <%= link_to area_path(area.id) do %>
+                      <%= attachment_image_tag area, :image, :fill, 400, 300, format: 'jpeg', fallback: "noimage.png" %>
+                      <% end %>
+                    </div>
               </section>
-           </div>
+           </iv>
            <% end %>
-       </table>
      </div>
    </div>
 </div>

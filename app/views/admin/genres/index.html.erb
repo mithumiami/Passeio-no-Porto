@@ -3,23 +3,24 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
 
-      <h4 class>Genre</h4>
+      <h4 class= "text-center my-4">Genre</h4>
 
-      <h5>New Genre</h5>
+      <div class = "text-right my-4">
 
-      <%= form_with model: @genre, local:true do |f| %>
-        <%= f.text_field :title %>
-        <%= f.submit 'Create', class: 'btn btn-success' %>
-      <% end %>
+        <%= form_with model: @genre, local:true do |f| %>
+          <%= f.text_field :title %>
+          <%= f.submit 'Create', class: 'btn btn-outline-success' %>
+        <% end %>
+      </div>
 
-      <table>
+      <table class ="table">
         <% @genres.each do |genre| %>
             <tr>
                 <div class="genre-item">
                   <section class="genre-text">
-<%# binding.pry %>
-                    <td><h3 class="genre-heading"><%= genre.id %><%= genre.title %></h3></td>
-                    <td><%= link_to "削除", admin_genre_path(genre.id), method: :delete %></td>
+                    <td><div class="genre-heading"><%= genre.id %></div></td>
+                    <td><%= genre.title %></td>
+                    <td><%= link_to "Delete", admin_genre_path(genre.id), method: :delete, class: 'btn btn-outline-danger' %></td>
 
                   </section>
 

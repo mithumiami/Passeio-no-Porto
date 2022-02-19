@@ -1,22 +1,32 @@
-<h4>Contact with Us</h4>
+<p id="notice"></p>
+<p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto">
 
+      <ul class= "offset-4">
 
-      <%= form_with model: @contact, local:true do |f| %>
+        <h4>Contact with Us</h4>
+        <%= form_with model: @contact, local:true do |f| %>
 
-        <label>Name</label>
-        <div><%= f.text_field :name %></div>
+          <label>Name</label>
+          <div><%= f.text_field :name %></div>
 
-        <label>Telephone number</label>
-        <div><%= f.text_field :telephone_number %></div>
+          <label>Telephone number</label>
+          <div><%= f.text_field :telephone_number %></div>
 
-        <label>Email</label>
-        <div><%= f.text_field :email %></div>
+          <label>Email</label>
+          <div><%= f.text_field :email %></div>
 
-        <label>Title</label>
-        <div><%= f.text_field :title %></div>
+          <label>Title</label>
+          <div><%= f.text_field :title %></div>
 
-        <label>Caption</label>
-        <div><%= f.text_field :body %></div>
+          <label>Caption</label>
+          <div><%= f.text_area :body %></div>
 
-        <%= f.submit 'Create', class: 'btn btn-success' %>
-      <% end %>
+          <%= f.submit 'Submit', class: 'btn btn-outline-success' %>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

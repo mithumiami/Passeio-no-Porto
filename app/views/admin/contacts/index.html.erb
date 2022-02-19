@@ -1,16 +1,22 @@
- <table>
+ <p id="notice"></p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 mx-auto ">
+      <h4 class="text-center">Contacts</h4>
+      <table class="table offset-1 mx-4">
         <% @contacts.each do |contact| %>
             <tr>
-                <div class="contact-item">
+                <div class>
                   <section class="contact-text">
-<%# binding.pry %>
-                    <td><h3 class="contact-heading"><%= contact.title %></h3></td>
-                    <td><%= link_to "Detail", admin_contact_path(contact.id) %></td>
-
-
+                    <td><%= contact.id %></td>
+                    <td><%= contact.title %></td>
+                    <td><%= link_to "Detail", admin_contact_path(contact.id), class: 'btn btn-outline-info' %></td>
                   </section>
 
                 </div>
               <% end %>
             </tr>
       </table>
+    </div>
+  </div>
+<div>

@@ -23,6 +23,11 @@ class Public::UsersController < ApplicationController
     reset_session
     redirect_to root_path
   end
+  
+  def prof
+    @user = User.find(params[:id])
+    @posts = @user.posts
+  end
 
   private
   def user_params

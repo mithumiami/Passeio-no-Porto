@@ -5,13 +5,12 @@ class Public::ContactsController < ApplicationController
 
   def create
     contact = Contact.new(contact_params)
-    #binding.pry
     contact.save!
     redirect_to contacts_path
   end
 
   def index
-    @contacts = Contact.all
+    
   end
   
 

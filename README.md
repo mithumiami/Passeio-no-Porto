@@ -25,7 +25,7 @@
 
 
 
-## 設計書（後日更新します）
+## 設計書
 ### ER図
 https://drive.google.com/file/d/18ZtEN3rpqab9Jz9Bk2MYqiEK7EVX4-Ig/view?usp=sharing
 
@@ -36,7 +36,10 @@ https://docs.google.com/spreadsheets/d/1QdboKez4aRx9LvrMvtp5lXUy2ub0J4pzS-vied-w
 https://docs.google.com/spreadsheets/d/1Raf1Kffht-c62BYZErpKtIPC6jmTvT8p/edit#gid=549108681
 
 ## チャレンジ要素一覧
-<https://docs.google.com/spreadsheets/d/1lW6UQAL9_4BBHfmx9qFglWuXn0uXGXPr6Jl6kWCVtcA/edit#gid=0>
+https://docs.google.com/spreadsheets/d/1lW6UQAL9_4BBHfmx9qFglWuXn0uXGXPr6Jl6kWCVtcA/edit#gid=0
+
+## テスト仕様書
+https://docs.google.com/spreadsheets/d/1m8HwA_J_LUjht3RIY-Fda6bI3dzOBvHfN9J2i_jD5Uw/edit#gid=1823734288
 
 ## 開発環境
 - OS：Linux(CentOS)

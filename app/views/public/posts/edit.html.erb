@@ -10,18 +10,23 @@
      </div>
 
 
-        <%= form_with model:@post, local:true do |f| %>
-          <label for="Title">Title</label>
-          <div class><%= f.text_field :title, autofocus: true, id:"Title", placeholder:"Title"%></div>
+        <%= form_with model: @post, local:true do |f| %>
+          <h6>Title</h6>
+          <div class><%= f.text_field :title, class: "border boder-secondary rounded" %></div>
 
           <h6>Genre</h6>
-          <%= f.collection_select(:title, Genre.all, :id, :title) %>
+          <%= f.collection_select(:genre_id, Genre.all, :id, :title) %>
 
           <h6>Area</h6>
-          <%= f.collection_select(:title, Area.all, :id, :title) %>
+          <%= f.collection_select(:area_id, Area.all, :id, :title) %>
 
-          <label for="Body">Caption</label>
-          <div class><%= f.text_area :body, autofocus: true, id:"Body", placeholder:"Caption"%></div>
+          <h6>Caption</h6>
+          <%= f.text_area :body, autofocus: true, id:"Body", placeholder:"Caption"%>
 
-          <%= f.submit "Update", class: 'btn btn-outline-success' %>
+          <%= f.hidden_field :user_id, :value=> current_user.id %>
+
+          <div class= "my-5"><%= f.submit "Update", class: 'btn btn-outline-success' %></div>
         <% end %>
+      </div>
+    </div>
+  </div>

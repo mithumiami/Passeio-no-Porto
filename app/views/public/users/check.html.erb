@@ -4,17 +4,17 @@
     <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
 
 
-        <h3 class="text-center my-4">本当に退会しますか？</h3>
+        <h3 class="text-center my-4">Do you really want to unsubscribe?</h3>
 
-        <div>
-         <p>退会すると、会員登録情報や</p>
-         <p>これまでの投稿が編集・削除できなくなります。</p>
-         <p>退会する場合は、「退会する」をクリックしてください。</p>
+        <div class="text-center my-4">
+         <p>If you unsubscribe, </p>
+         <p>you will not be able to edit or delete your membership registration information or previous posts. </p>
+         <p>To unsubscribe, click "Unsubscribe".</p>
         </div>
 
-        <div>
-         <%= link_to "退会しない", user_path(current_user.id), class: 'btn btn-primary'%>
-         <%= link_to "退会する",  goodbye_path(current_user.id), method: :patch, class: 'btn btn-danger'%>
+        <div class= "text-center my-4">
+         <div class= "mx-3"><%= link_to "Back", user_path(current_user.id), class: 'btn btn-outline-primary mx-3'%>
+         <%= link_to "Unsubscribe",  goodbye_path(current_user.id), method: :patch, class: 'btn btn-outline-danger mx-3'%>
         </div>
       </div>
     </div>

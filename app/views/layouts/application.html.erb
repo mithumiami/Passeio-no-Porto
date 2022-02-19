@@ -13,7 +13,12 @@
     <header class="shadow-sm">
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <div class="navbar-brand p-3"><%= link_to 'Passeio no Porto', root_path, class: "text-decoration-none text-dark" %></div>
+        <div class="navbar-brand p-3">
+          <% if admin_signed_in? %>
+            <%= link_to 'Passeio no Porto', admin_top_path, class: "text-decoration-none text-dark" %></div>
+          <% else %>
+            <%= link_to 'Passeio no Porto', root_path, class: "text-decoration-none text-dark" %></div>
+          <% end %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -39,7 +44,6 @@
 
             <% else %>
               <li class="nav-item mx-1"><%= link_to 'About', about_path, class: 'btn btn-outline-dark' %></li>
-              <li class="nav-item mx-1"><%= link_to 'Area', areas_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Sign up', new_user_registration_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Log in', new_user_session_path, class: 'btn btn-outline-dark' %></li>
               <li class="nav-item mx-1"><%= link_to 'Contact', new_contact_path, class: 'btn btn-outline-dark' %></li>

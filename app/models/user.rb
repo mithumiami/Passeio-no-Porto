@@ -8,4 +8,8 @@ class User < ApplicationRecord
   has_many :likes, dependent: :destroy
   attachment :img
 
+  def active_for_authentication?
+    super && (self.is_active == true)
+  end
+
 end

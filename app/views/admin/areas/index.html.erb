@@ -3,12 +3,8 @@
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
 
-      <h4 class>Area</h4>
+      <div class= "text-right my-4"><%= link_to 'New Area', new_admin_area_path, class: 'btn btn-outline-primary' %></div>
 
-      <h5>New Area</h5>
-      <li>
-        <%= link_to '投稿フォーム', new_admin_area_path %>
-      </li>
 
 
       <table class = "table">
@@ -24,7 +20,7 @@
                     <td><%= area.title %></td>
 
 
-                    <td><%= link_to "削除", admin_area_path(area.id), method: :delete %></td>
+                    <td><%= link_to "Delete", admin_area_path(area.id), method: :delete, class: 'btn btn-outline-danger' %></td>
 
                   </section>
 
