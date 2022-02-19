@@ -2,9 +2,9 @@ class Public::PostsController < ApplicationController
 
   def index
     @posts = Post.all
-    @tag_list = Tag.all              #ビューでタグ一覧を表示するために全取得。
-    @post = current_user.posts.new   #ビューのform_withのmodelに使う。
-    #@post_like_ranks = Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
+    @tag_list = Tag.all
+    @post = current_user.posts.new
+    @post_like_ranks = hoge
 
   end
 
@@ -21,19 +21,32 @@ class Public::PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
+  def search
+    @posts = Post.search(params[:keyword])
+    @keyword = params[:keyword]
+    @tag_list = Tag.all
+    @post_like_ranks = hoge
+    render "index"
+  end
+
   def create
-
     @post = current_user.posts.new(post_params)
-
-    #tag_list = params[:post][:name].split(nil)
+    tag_list = params[:post][:name].split(nil)
 
     if @post.save
-      #@post.save_tag(tag_list)
-      redirect_back(fallback_location: posts_path)
+      @post.save_tag(tag_list)
+      redirect_to posts_path(@post)
     else
-      redirect_back(fallback_location: posts_path)
+      render:new
     end
 
+  end
+
+  def search_tag
+    @tag_list=Tag.all
+    @tag=Tag.find(params[:tag_id])
+    @posts = @tag.posts.all
+    #@posts=@tag.posts.page(params[:page]).per(10)
   end
 
   def update
@@ -48,15 +61,14 @@ class Public::PostsController < ApplicationController
     redirect_to posts_path
   end
 
-  def search
-    @posts = Post.search(params[:keyword])
-    @keyword = params[:keyword]
-    render "index"
-  end
 
   private
   def post_params
     params.require(:post).permit(:title, :body, :image, :user_id, :area_id, :genre_id)
+  end
+  
+  def  hoge
+    Post.find(Like.group(:post_id).order('count(post_id) desc').limit(3).pluck(:post_id))
   end
 
 end

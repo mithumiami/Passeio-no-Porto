@@ -1,41 +1,32 @@
 <head>
-  　<link rel="stylesheet" href="/jquery.bxslider.css">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js" /></script>
-    <script src="/jquery.bxSlider.min.js"></script>
-
-    <script>
-    $(function(){
-    	 $('.bxslider').bxSlider({
-    		auto: true,
-    		slideWidth: 640,
-    		minSlides: 3
-    	});
-    });
-    </script>
-
+  <script>
+  $(function(){
+  	 $('.bxslider').bxSlider({
+  		auto: true,
+  		slideWidth: 640,
+  		minSlides: 3
+  	});
+  });
+  </script>
 </head>
-
 
 <body>
     <p id="notice"></p>
     <div class="container">
-      <div class="row">
-        <div class="col-sm-12 mx-auto">
 
-          <h3>Bem Vindo ao Porto!!</h3>
+          <h3 class="offset-4 my-4">Bem Vindo ao Porto!!</h3>
 
+        <div class="row offset-2">
           <ul class="bxslider">
-          	<li><img src="Porto1.jpg" width="640" height="300"></li>
-          	<li><img src="Porto2.jpg" width="640" height="300"></li>
-          	<li><img src="Porto3.jpg" width="640" height="300"></li>
-          	<li><img src="Porto4.jpg" width="640" height="300"></li>
+          	<li><img src="/images/Porto1.jpg" width="600" height="300"></li>
+          	<li><img src="/images/Porto2.jpg" width="600" height="300"></li>
+          	<li><img src="/images/Porto3.jpg" width="600" height="300"></li>
+          	<li><img src="/images/Porto4.jpg" width="600" height="300"></li>
           </ul>
-
-          <h4 class="my-3 ml-3">Posts</h4>
-
-
         </div>
 
+          <h4 class="my-3 ml-3">Posts</h4>
+          <div class="row my-4">
             <% @posts.each do |post| %>
             <div class="col-md-3">
               <div class="product-item">

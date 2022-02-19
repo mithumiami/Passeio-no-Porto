@@ -20,7 +20,7 @@
                   <section class="genre-text">
                     <td><div class="genre-heading"><%= genre.id %></div></td>
                     <td><%= genre.title %></td>
-                    <td><%= link_to "Delete", admin_genre_path(genre.id), method: :delete, class: 'btn btn-outline-danger' %></td>
+                    <td><%= link_to "Delete", admin_genre_path(genre.id), method: :delete, data: { confirm: 'Are you sure you want to delete?'}, class: 'btn btn-outline-danger' %></td>
 
                   </section>
 

@@ -1,0 +1,32 @@
+<p id="notice"></p>
+<div class="container">
+    <div class="col-sm-12 my-4">
+
+      <div class= "row my-2">
+        <% @tag_list.each do |list|%>
+            <button type ="button" class="btn btn-outline-secondary btn-sm mx-1 border rounded-pill">
+              <%=link_to list.name,search_tag_path(tag_id: list.id) %>
+              <%="(#{list.posts.count})" %>
+            </button>
+        <% end %>
+      </div>
+
+      <h4><%=@tag.name%> Posts</h5>
+      <div class= "row my-4">
+        <% @posts.each do |post| %>
+          <div class="col-md-3">
+            <div class="post">
+              <div class="post-body">
+                  <h6 class="post-title">
+                    <%= link_to post_path(post.id) do %>
+                        <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
+                      <% end %>
+                    <div><%= post.title.truncate(25) %></div>
+                  </h6>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+</div>

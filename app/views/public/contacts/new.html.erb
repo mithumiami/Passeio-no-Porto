@@ -24,7 +24,7 @@
           <label>Caption</label>
           <div><%= f.text_area :body %></div>
 
-          <%= f.submit 'Submit', class: 'btn btn-outline-success' %>
+          <%= f.submit 'Submit', data: { confirm: 'Are you sure you want to submit?'}, class: 'btn btn-outline-success' %>
         <% end %>
       </ul>
     </div>

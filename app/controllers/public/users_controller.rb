@@ -10,6 +10,7 @@ class Public::UsersController < ApplicationController
   def update
     @user = User.find(current_user.id)
     @user.update(user_params)
+    flash[:notice] = "Information was successfully updated."
     redirect_to user_path(current_user.id)
   end
 

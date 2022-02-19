@@ -1,35 +1,29 @@
 <p id="notice"></p>
 <p id="notice"></p>
 <div class="container">
-  <div class="row">
-    <div class="col-sm-12 mx-auto">
 
-      <h4 class><%= @user.account %>'s posts</h5>
+      <h4 class><%= @user.account %>'s posts</h4>
 
         <div class= "text-left my-4">
           <% if @user == current_user %>
           <%= link_to "My Page", user_path(current_user.id), class: 'btn btn-outline-success' %>
           <% end %>
         </div>
-
-
-      <% @posts.each do |post| %>
-        <div class="col-md-3">
-          <div class="product-item">
-            <section class="product-text">
-              <%= link_to post_path(post.id) do %>
-                <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
-              <% end %>
-              <div><%= post.title %></div>
-              <div id="like"><%= render "public/likes/like", post: post %></div>
-            </section>
+      <div class="row my-2">
+        <% @posts.each do |post| %>
+          <div class="col-md-3">
+            <div class="product-item">
+              <section class="product-text">
+                <%= link_to post_path(post.id) do %>
+                  <%= attachment_image_tag post, :image, :fill, 200, 150, format: 'jpeg', fallback: "noimage.png" %>
+                <% end %>
+                <div><%= post.title %></div>
+                <div id="like"><%= render "public/likes/like", post: post %></div>
+              </section>
+            </div>
           </div>
-        </div>
-      <% end %>
-
-
+        <% end %>
     </div>
-  </div>
 </div>
 
 

@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12 col-md-8 col-lg-8 px-5 px-sm-0 mx-auto ">
-      <h4>New Post</h4>
+      <h4 class="text-center">New Post</h4>
 
       <%= form_with model: @post, url:posts_path, local:true do |f| %>
 
@@ -22,12 +22,11 @@
           <h6>Image</h6>
           <%= f.attachment_field :image, class: "border boder-secondary rounded" %>
 
-          <%= f.hidden_field :user_id, :value=> current_user.id %>
-
           <h6>Tag</h6>
           <p>"スペースを入力することで複数のタグを付けることができます。"</p>
           <%= f.text_field :name, class: "border boder-secondary rounded" %>
 
+          <%= f.hidden_field :user_id, :value=> current_user.id %>
 
           <div class= "my-5"><%= f.submit 'Create', class: 'btn btn-outline-dark' %></div>
         </div>
