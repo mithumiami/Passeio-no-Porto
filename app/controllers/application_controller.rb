@@ -11,7 +11,14 @@ class ApplicationController < ActionController::Base
   def after_sign_in_path_for(resource)
     posts_path
   end
-  
+
+  def autheniticate_user
+    if @current_user==nil
+      flash[:notice]="You need to log in"
+      redirect_to root_path
+    end
+  end
+
   def reject_user
     @user = User.find_by(email: params[:user][:email].downcase)
     if @user
