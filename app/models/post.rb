@@ -35,6 +35,11 @@ class Post < ApplicationRecord
       self.tags << new_tag
     end
   end
+  
+  validates :title, presence: true
+  validates :body, presence: true
+  validates :area_id, presence: true
+  validates :genre_id, presence: true
 
 
 end
